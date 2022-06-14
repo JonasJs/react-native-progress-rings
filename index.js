@@ -1,5 +1,5 @@
 import React, {useMemo} from 'react';
-import {View} from 'react-native';
+import {View, StyleSheet, Text} from 'react-native';
 
 import Svg from 'react-native-svg';
 
@@ -13,20 +13,24 @@ export default function ActivityRings({
   activeStrokeSecondaryColor= '#DF1B47',
   porcent = 10,
   multiple = [],
-  style,
+  style = {},
 }) {
 
   const viewBox = useMemo(() => {
     return radius + strokeWidth;
   }, [radius, strokeWidth]);
 
-  
-
-  
-  console.log(multiple);
-
   return (
-    <View style={style}>
+    <View style={{
+        width: radius*2,
+        height: radius*2,
+        position: "relative",
+      }}>
+      <View style={styles.container}>
+        <Text style={{
+          color: "red"
+        }}>Testando</Text>
+      </View>
       <Svg
         width={radius * 2}
         height={radius * 2}
@@ -62,3 +66,14 @@ export default function ActivityRings({
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    width: "100%",
+    height: "100%",
+    justifyContent: "center",
+    alignContent: "center",
+    backgroundColor: "#eaeaea",
+    position: "absolute",
+  },
+});
