@@ -1,0 +1,16 @@
+{
+  "name": "react-native-progress-rings",
+  "version": "1.0.0",
+  "description": "React Native Progress Rings",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-native": ">=0.59.0",
+    "react-native-svg": "^12.1.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
