@@ -1,45 +1,32 @@
-import React, { useMemo } from 'react';
-import { View, Text } from 'react-native';
+import React, {useMemo} from 'react';
+import {View} from 'react-native';
 
-import Svg, { G, Circle, Path } from 'react-native-svg';
-
-// Hooks
-import useCicle from "./hooks/useCicle";
+import Svg from 'react-native-svg';
 
 // Components
-import Gradient from "./components/Gradient";
-
-<ActivityRings>
-  <ActivityRings>
-    <ActivityRings>
-
-    </ActivityRings>
-  </ActivityRings>
-</ActivityRings>
+import Rings from "./components/Rings";
 
 export default function ActivityRings({
   strokeWidth = 10,
   radius = 60,
   activeStrokeColor = '#EDAD2B',
   activeStrokeSecondaryColor= '#DF1B47',
-  circleBackgroundColor = '#DF1B47',
+  porcent = 10,
+  multiple = [],
+  style,
 }) {
-
-  const { strokeColor, radiusCicle, porcent } = useCicle({
-    radius,
-    strokeWidth,
-    activeStrokeColor,
-    activeStrokeSecondaryColor
-  });
 
   const viewBox = useMemo(() => {
     return radius + strokeWidth;
   }, [radius, strokeWidth]);
+
   
-  const [pivotX, pivotY] = [radius, radius];
+
   
+  console.log(multiple);
+
   return (
-    <View>
+    <View style={style}>
       <Svg
         width={radius * 2}
         height={radius * 2}
@@ -48,33 +35,29 @@ export default function ActivityRings({
           transform: [{ rotateZ: '270deg' }]
         }}
       >
-        <G rotate={45}>
-          {activeStrokeSecondaryColor && (
-            <Gradient
-              activeStrokeColor={activeStrokeColor}
-              activeStrokeSecondaryColor={activeStrokeSecondaryColor}
-            />
-          )}
-          <Circle
-            cx="50%"
-            cy="50%"
-            stroke={strokeColor}
-            strokeOpacity={0.2}
+        {multiple.length > 0 ? 
+          multiple.map((ring,index) => {
+            return (
+              <Rings
+                key={index}
+                unique={index}
+                porcent={ring.porcent}
+                strokeWidth={ring.strokeWidth}
+                radius={ring.radius}
+                activeStrokeSecondaryColor={ring.activeStrokeSecondaryColor}
+                activeStrokeColor={ring.activeStrokeColor}
+              />
+            )
+          })
+        : (
+          <Rings
+            porcent={porcent}
             strokeWidth={strokeWidth}
-            r={radiusCicle}
-            // transform={`translate(-${pivotX} -${pivotY})`}
+            radius={radius}
+            activeStrokeSecondaryColor={activeStrokeSecondaryColor}
+            activeStrokeColor={activeStrokeColor}
           />
-            <Circle
-              cx="50%"
-              cy="50%"
-              stroke={strokeColor}
-              strokeWidth={strokeWidth}
-              r={radiusCicle}
-              strokeDasharray={2 * Math.PI * radiusCicle}
-              strokeLinecap={'round'}
-              strokeDashoffset={((100-porcent)/100)*(Math.PI*(radiusCicle*2))}
-            />
-        </G>
+        )}
       </Svg>
     </View>
   )

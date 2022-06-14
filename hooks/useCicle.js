@@ -4,16 +4,16 @@ export default function useCicle({
   activeStrokeSecondaryColor,
   activeStrokeColor,
   radius,
-  strokeWidth
+  strokeWidth,
+  unique
 }) {
   const [strokeColor, setStrokeColor] = useState(activeStrokeColor);
 
   const radiusCicle = radius + strokeWidth / 2;
-  const porcent = 35;
 
   useEffect(() => {
     if(activeStrokeSecondaryColor) {
-      setStrokeColor('url(#gradient)');
+      setStrokeColor(`url(#gradient${unique})`);
     } else {
       setStrokeColor(activeStrokeColor);
     }
@@ -22,7 +22,6 @@ export default function useCicle({
   return {
     strokeColor,
     radiusCicle,
-    porcent
   };
 
 }
