@@ -10,8 +10,8 @@ import Gradient from "./Gradient";
 export default function Rings({
   strokeWidth,
   radius,
-  activeStrokeSecondaryColor,
-  activeStrokeColor, 
+  strokeSecondaryColor,
+  strokeColor, 
   percentage,
   unique
 }) {
@@ -19,18 +19,18 @@ export default function Rings({
   const { strokeColor, radiusCicle} = useCicle({
     radius,
     strokeWidth,
-    activeStrokeColor,
-    activeStrokeSecondaryColor,
+    strokeColor,
+    strokeSecondaryColor,
     unique
   });
 
   return (
     <G rotate={45}>
-      {activeStrokeSecondaryColor && (
+      {strokeSecondaryColor && (
         <Gradient
           unique={unique}
-          activeStrokeColor={activeStrokeColor}
-          activeStrokeSecondaryColor={activeStrokeSecondaryColor}
+          strokeColor={strokeColor}
+          strokeSecondaryColor={strokeSecondaryColor}
         />
       )}
       <Circle

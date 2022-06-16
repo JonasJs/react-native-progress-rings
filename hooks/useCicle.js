@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from 'react';
 
 export default function useCicle({
-  activeStrokeSecondaryColor,
-  activeStrokeColor,
+  strokeSecondaryColor,
+  strokeColor,
   radius,
   strokeWidth,
   unique
 }) {
-  const [strokeColor, setStrokeColor] = useState(activeStrokeColor);
+  const [strokeColor, setStrokeColor] = useState(strokeColor);
 
   const radiusCicle = radius + strokeWidth / 2;
 
   useEffect(() => {
-    if(activeStrokeSecondaryColor) {
+    if(strokeSecondaryColor) {
       setStrokeColor(`url(#gradient${unique})`);
     } else {
-      setStrokeColor(activeStrokeColor);
+      setStrokeColor(strokeColor);
     }
-  }, [activeStrokeSecondaryColor, activeStrokeColor]);
+  }, [strokeSecondaryColor, strokeColor]);
     
   return {
     strokeColor,

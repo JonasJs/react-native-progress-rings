@@ -2,8 +2,8 @@ import React, { memo } from 'react'
 import { Defs, LinearGradient, Stop } from 'react-native-svg';
 
 function Gradient({
-  activeStrokeColor,
-  activeStrokeSecondaryColor,
+  strokeColor,
+  strokeSecondaryColor,
   unique
 }) {
   console.log("ddd => ", `gradient${unique}`)
@@ -16,8 +16,8 @@ function Gradient({
         x1="50%" y1="100%" x2="74%" y2="10%"
         gradientUnits="userSpaceOnUse"
       >
-        <Stop offset="0%" stopColor={activeStrokeSecondaryColor} />
-        <Stop offset="100%" stopColor={activeStrokeColor} />
+        <Stop offset="0%" stopColor={strokeSecondaryColor} />
+        <Stop offset="100%" stopColor={strokeColor} />
       </LinearGradient>
     </Defs>
   )

@@ -9,8 +9,8 @@ import Rings from "./components/Rings";
 export default function ActivityRings({
   strokeWidth = 10,
   radius = 60,
-  activeStrokeColor = '#EDAD2B',
-  activeStrokeSecondaryColor= null,
+  strokeColor = '#EDAD2B',
+  strokeSecondaryColor= null,
   percentage = 10,
   multiple = [],
   style = {},
@@ -57,8 +57,8 @@ export default function ActivityRings({
                   percentage={ring.percentage}
                   strokeWidth={ring.strokeWidth}
                   radius={ring.radius}
-                  activeStrokeSecondaryColor={ring.activeStrokeSecondaryColor}
-                  activeStrokeColor={ring.activeStrokeColor}
+                  strokeSecondaryColor={ring.strokeSecondaryColor}
+                  strokeColor={ring.strokeColor}
                 />
               )
             })
@@ -67,8 +67,8 @@ export default function ActivityRings({
               percentage={percentage}
               strokeWidth={strokeWidth}
               radius={radius}
-              activeStrokeSecondaryColor={activeStrokeSecondaryColor}
-              activeStrokeColor={activeStrokeColor}
+              strokeSecondaryColor={strokeSecondaryColor}
+              strokeColor={strokeColor}
             />
           )}
         </Svg>
