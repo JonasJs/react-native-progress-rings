@@ -54,8 +54,8 @@ export default function ActivityRings({
                 <Rings
                   key={index}
                   unique={index}
-                  percentage={ring.percentage}
-                  strokeWidth={ring.strokeWidth}
+                  percentage={ring?.percentage || 0}
+                  strokeWidth={ring?.strokeWidth ||  strokeWidth}
                   radius={ring.radius}
                   strokeSecondaryColor={ring.strokeSecondaryColor}
                   strokeColor={ring.strokeColor}
@@ -65,7 +65,7 @@ export default function ActivityRings({
           : (
             <Rings
               percentage={percentage}
-              strokeWidth={strokeWidth}
+              strokeWidth={ring?.strokeWidth ||  strokeWidth}
               radius={radius}
               strokeSecondaryColor={strokeSecondaryColor}
               strokeColor={strokeColor}
