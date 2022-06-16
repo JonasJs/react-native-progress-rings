@@ -1,16 +1,28 @@
 {
   "name": "react-native-progress-rings",
   "version": "1.0.0",
-  "description": "React Native Progress Rings",
+  "description": "React Native customizable progress Rings.",
+  "keywords": [
+    "react",
+    "rings",
+    "progress",
+    "activity",
+    "chart",
+    "activity"
+  ],
+  "homepage": "https://github.com/JonasJs/react-native-progress-rings#readme",
+  "bugs": {
+    "url": "https://github.com/JonasJs/react-native-progress-ringsissues",
+    "email": "devjonasalves@gmail.com"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "peerDependencies": {
-    "react": ">=16.8.0",
-    "react-native": ">=0.59.0",
-    "react-native-svg": "^12.1.0"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JonasJs/react-native-progress-rings.git"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Jonas Alves <devjonasalves@gmail.com> (https://www.instagram.com/devjonasalves/)",
+  "license": "MIT"
 }
