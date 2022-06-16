@@ -10,7 +10,7 @@ export default function ActivityRings({
   strokeWidth = 10,
   radius = 60,
   strokeColor = '#EDAD2B',
-  strokeSecondaryColor= null,
+  strokeSecondaryColor = null,
   percentage = 10,
   multiple = [],
   style = {},
@@ -65,7 +65,7 @@ export default function ActivityRings({
           : (
             <Rings
               percentage={percentage}
-              strokeWidth={ring?.strokeWidth ||  strokeWidth}
+              strokeWidth={strokeWidth}
               radius={radius}
               strokeSecondaryColor={strokeSecondaryColor}
               strokeColor={strokeColor}

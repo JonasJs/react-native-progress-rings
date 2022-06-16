@@ -16,7 +16,7 @@ export default function Rings({
   unique
 }) {
 
-  const { strokeColor, radiusCicle} = useCicle({
+  const { activeStrokeColor, radiusCicle} = useCicle({
     radius,
     strokeWidth,
     strokeColor,
@@ -36,7 +36,7 @@ export default function Rings({
       <Circle
         cx="50%"
         cy="50%"
-        stroke={strokeColor}
+        stroke={activeStrokeColor}
         strokeOpacity={0.2}
         strokeWidth={strokeWidth}
         r={radiusCicle}
@@ -44,7 +44,7 @@ export default function Rings({
       <Circle
         cx="50%"
         cy="50%"
-        stroke={strokeColor}
+        stroke={activeStrokeColor}
         strokeWidth={strokeWidth}
         r={radiusCicle}
         strokeDasharray={2 * Math.PI * radiusCicle}
