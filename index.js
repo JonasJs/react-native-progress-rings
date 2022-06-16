@@ -11,7 +11,7 @@ export default function ActivityRings({
   radius = 60,
   activeStrokeColor = '#EDAD2B',
   activeStrokeSecondaryColor= null,
-  porcent = 10,
+  percentage = 10,
   multiple = [],
   style = {},
   renderMiddle: RenderMiddle = null,
@@ -54,7 +54,7 @@ export default function ActivityRings({
                 <Rings
                   key={index}
                   unique={index}
-                  porcent={ring.porcent}
+                  percentage={ring.percentage}
                   strokeWidth={ring.strokeWidth}
                   radius={ring.radius}
                   activeStrokeSecondaryColor={ring.activeStrokeSecondaryColor}
@@ -64,7 +64,7 @@ export default function ActivityRings({
             })
           : (
             <Rings
-              porcent={porcent}
+              percentage={percentage}
               strokeWidth={strokeWidth}
               radius={radius}
               activeStrokeSecondaryColor={activeStrokeSecondaryColor}

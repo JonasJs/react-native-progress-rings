@@ -12,7 +12,7 @@ export default function Rings({
   radius,
   activeStrokeSecondaryColor,
   activeStrokeColor, 
-  porcent,
+  percentage,
   unique
 }) {
 
@@ -49,7 +49,7 @@ export default function Rings({
         r={radiusCicle}
         strokeDasharray={2 * Math.PI * radiusCicle}
         strokeLinecap={'round'}
-        strokeDashoffset={((100-porcent)/100)*(Math.PI*(radiusCicle*2))}
+        strokeDashoffset={((100-percentage)/100)*(Math.PI*(radiusCicle*2))}
       />
     </G>
   )
