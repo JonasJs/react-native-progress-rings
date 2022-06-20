@@ -6,7 +6,6 @@ function Gradient({
   strokeSecondaryColor,
   unique
 }) {
-  console.log("ddd => ", `gradient${unique}`)
   return (
     <Defs>
       <LinearGradient
