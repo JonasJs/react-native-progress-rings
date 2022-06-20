@@ -25,7 +25,6 @@ export default function ActivityRings({
   return (
     <View style={{
       width: radius*2,
-      height: radius*2,
       position: "relative",
     }}>
 
@@ -91,10 +90,8 @@ const styles = StyleSheet.create({
     alignSelf:"center",
   },
   renderFooter: {
-    flex: 1,
     justifyContent: 'center',
     alignContent:'center',
     alignSelf:"center",
-    marginTop: 8,
   }
 });
