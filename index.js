@@ -1,7 +1,7 @@
-import React, {useMemo} from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import React, { useMemo } from "react";
+import { View, StyleSheet, Text } from "react-native";
 
-import Svg from 'react-native-svg';
+import Svg from "react-native-svg";
 
 // Components
 import Rings from "./components/Rings";
@@ -9,7 +9,7 @@ import Rings from "./components/Rings";
 export default function ActivityRings({
   strokeWidth = 10,
   radius = 60,
-  strokeColor = '#EDAD2B',
+  strokeColor = "#EDAD2B",
   strokeSecondaryColor = null,
   percentage = 10,
   multiple = [],
@@ -17,22 +17,24 @@ export default function ActivityRings({
   renderMiddle: RenderMiddle = null,
   renderFooter: RenderFooter = null,
 }) {
-
   const viewBox = useMemo(() => {
     return radius + strokeWidth;
   }, [radius, strokeWidth]);
 
   return (
-    <View style={{
-      width: radius*2,
-      position: "relative",
-    }}>
-
-      <View style={{
-        width: radius*2,
-        height: radius*2,
+    <View
+      style={{
+        width: radius * 2,
         position: "relative",
-      }}>
+      }}
+    >
+      <View
+        style={{
+          width: radius * 2,
+          height: radius * 2,
+          position: "relative",
+        }}
+      >
         {RenderMiddle && (
           <View style={styles.container}>
             <RenderMiddle />
@@ -43,25 +45,25 @@ export default function ActivityRings({
           height={radius * 2}
           viewBox={`0 0 ${viewBox * 2} ${viewBox * 2}`}
           style={{
-            transform: [{ rotateZ: '270deg' }],
+            transform: [{ rotateZ: "270deg" }],
             position: "absolute",
           }}
         >
-          {multiple.length > 0 ? 
-            multiple.map((ring,index) => {
+          {multiple.length > 0 ? (
+            multiple.map((ring, index) => {
               return (
                 <Rings
                   key={index}
                   unique={index}
                   percentage={ring?.percentage || 0}
-                  strokeWidth={ring?.strokeWidth ||  strokeWidth}
+                  strokeWidth={ring?.strokeWidth || strokeWidth}
                   radius={ring.radius}
                   strokeSecondaryColor={ring.strokeSecondaryColor}
                   strokeColor={ring.strokeColor}
                 />
-              )
+              );
             })
-          : (
+          ) : (
             <Rings
               percentage={percentage}
               strokeWidth={strokeWidth}
@@ -78,20 +80,21 @@ export default function ActivityRings({
         </View>
       )}
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignContent:'center',
+    justifyContent: "center",
+    alignContent: "center",
     borderRadius: 10000,
-    alignSelf:"center",
+    alignSelf: "center",
+    zIndex: 2,
   },
   renderFooter: {
-    justifyContent: 'center',
-    alignContent:'center',
-    alignSelf:"center",
-  }
+    justifyContent: "center",
+    alignContent: "center",
+    alignSelf: "center",
+  },
 });
